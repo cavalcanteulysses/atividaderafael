@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix'=>'produtos', 'where'=>['id'=>'[0-9]+']], function() {
+Route::group(['prefix'=>'produtos', 'middleware' => ['auth'], 'where'=>['id'=>'[0-9]+']], function() {
     Route::get('',['as'=>'produtos', 'uses'=>'ProdutosController@index']);
     Route::get('create',['as'=>'produtos.create', 'uses'=>'ProdutosController@create']);
     Route::post('store',['as'=>'produtos.store', 'uses'=>'ProdutosController@store']);
@@ -24,3 +24,6 @@ Route::group(['prefix'=>'produtos', 'where'=>['id'=>'[0-9]+']], function() {
     Route::get('{id}/edit',['as'=>'produtos.edit', 'uses'=>'ProdutosController@edit']);
     Route::put('{id}/update',['as'=>'produtos.update', 'uses'=>'ProdutosController@update']);
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
