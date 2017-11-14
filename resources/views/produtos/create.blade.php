@@ -4,7 +4,15 @@
 <div class="container">
 <h1>Novo Produto</h1>
 
-{!! Form::open() !!}
+@if ($errors->any())
+<ul class="alert alert-warning">
+@foreach($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+@endif
+
+{!! Form::open(['route'=>'produtos.store']) !!}
 
 <!-- Nome Form Input -->
 
