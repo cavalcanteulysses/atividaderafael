@@ -1,3 +1,28 @@
+<p>
+<h2>Instalação do Collective</h2>
+## 
+    composer require "laravelcollective/html":"^5.3.0" 
+##
+ 
+##
+ 'providers' => [
+    // ...
+    Collective\Html\HtmlServiceProvider::class,
+    // ...
+  ],
+##
+
+##
+ 'aliases' => [
+    // ...
+      'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
+    // ...
+  ],
+##
+</p>
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
