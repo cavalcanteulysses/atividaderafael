@@ -33,7 +33,7 @@
 <td>{{ $processo->documento->tipo }}</td>
 <td>
 <a href="#" class="btn-sm btn-success">Editar</a>
-<a href="#" class="btn-sm btn-danger">Remover</a>
+<a href="{{ route('compras.destroy',['id'=>$processo->id]) }}" class="btn-sm btn-danger">Remover</a>
 </td>
 </tr>
 @endforeach

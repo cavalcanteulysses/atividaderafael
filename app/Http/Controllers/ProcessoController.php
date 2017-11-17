@@ -26,7 +26,14 @@ class ProcessoController extends Controller
 
         $input = $request->all();
         Processo::create($input);    
-        return redirect()->route('processos');
+        return redirect()->route('compras');
         
+    }
+
+    public function destroy($id){
+
+        Processo::find($id)->delete();
+        return redirect('compras');
+
     }
 }
