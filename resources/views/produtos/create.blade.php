@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<h1>Novo Produto</h1>
+<h1>Nova Matrícula</h1>
 
 @if ($errors->any())
 <ul class="alert alert-warning">
@@ -24,12 +24,23 @@
  <!-- Descricao Form Input -->
 
  <div class="form-group">
- {!! Form::label('descricao', 'Descrição:') !!}
- {!! Form::textarea('descricao', null, ['class'=>'form-control']) !!}
+ {!! Form::label('cpf', 'CPF:') !!}
+ {!! Form::text('cpf', null, ['class'=>'form-control']) !!}
  </div>
 
  <div class="form-group">
- {!! Form::submit('Criar Produto', ['class'=>'btn btn-primary']) !!}
+ {!! Form::label('curso', 'Curso:') !!}
+ {!! Form::text('curso', null, ['class'=>'form-control']) !!}
+ </div>
+
+ <div class="form-group">
+ {!! Form::label('periodo', 'Periodo:') !!}
+ {!! Form::text('periodo', null, ['class'=>'form-control']) !!}
+ </div>
+ 
+
+ <div class="form-group">
+ {!! Form::submit('Salvar Matrícula', ['class'=>'btn btn-primary']) !!}
  </div>
 
  {!! Form::close() !!}

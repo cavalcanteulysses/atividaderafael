@@ -25,7 +25,9 @@ class ProdutoRequest extends FormRequest
     {
         return [
             'nome' => 'required|min:5',
-            'descricao' => 'required'
+            'cpf' => 'required',
+            'curso' => 'required',
+            'periodo' => 'required'
         ];
     }
 }

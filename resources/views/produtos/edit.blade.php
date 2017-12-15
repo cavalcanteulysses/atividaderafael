@@ -1,8 +1,8 @@
-// resources/views/produtos/edit.blade.php
+
 @extends('app')
 @section('content')
 <div class="container">
-<h1>Editar Produto: {{$produto->name}}</h1>
+<h1>Editar Matrícula nº: {{$produto->id}}</h1>
 @if ($errors->any())
 <ul class="alert alert-warning">
 @foreach($errors->all() as $error)
@@ -18,8 +18,18 @@
 </div>
 <!-- Descricao Form Input -->
 <div class="form-group">
-{!! Form::label('descricao', 'Descrição:') !!}
-{!! Form::textarea('descricao', $produto->nome, ['class'=>'form-control']) !!}
+{!! Form::label('cpf', 'CPF:') !!}
+{!! Form::text('cpf', $produto->cpf, ['class'=>'form-control']) !!}
+</div>
+
+<div class="form-group">
+{!! Form::label('curso', 'Curso:') !!}
+{!! Form::text('curso', $produto->curso, ['class'=>'form-control']) !!}
+</div>
+
+<div class="form-group">
+{!! Form::label('periodo', 'Periodo:') !!}
+{!! Form::text('periodo', $produto->periodo, ['class'=>'form-control']) !!}
 </div>
 <div class="form-group">
 {!! Form::submit('Salvar Produto', ['class'=>'btn btn-primary']) !!}
