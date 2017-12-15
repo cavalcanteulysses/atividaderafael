@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 
 Route::group(['prefix'=>'/', 'where'=>['id'=>'[0-9]+']], function() {
-    Route::get('',['as'=>'produtos', 'uses'=>'ProdutosController@index']);
-    Route::get('matricula',['as'=>'produtos.create', 'uses'=>'ProdutosController@create']);
-    Route::post('salvar',['as'=>'produtos.store', 'uses'=>'ProdutosController@store']);
-    Route::get('{id}/destroy',['as'=>'produtos.destroy', 'uses'=>'ProdutosController@destroy']);
-    Route::get('{id}/editar',['as'=>'produtos.edit', 'uses'=>'ProdutosController@edit']);
-    Route::put('{id}/update',['as'=>'produtos.update', 'uses'=>'ProdutosController@update']);
+    Route::get('',['as'=>'matriculas', 'uses'=>'MatriculaController@index']);
+    Route::get('matricula',['as'=>'matriculas.create', 'uses'=>'MatriculaController@create']);
+    Route::post('salvar',['as'=>'matriculas.store', 'uses'=>'MatriculaController@store']);
+    Route::get('{id}/destroy',['as'=>'matriculas.destroy', 'uses'=>'MatriculaController@destroy']);
+    Route::get('{id}/editar',['as'=>'matriculas.edit', 'uses'=>'MatriculaController@edit']);
+    Route::put('{id}/update',['as'=>'matriculas.update', 'uses'=>'MatriculaController@update']);
 });
 
